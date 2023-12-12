@@ -1,3 +1,4 @@
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 
 const ActionType = {
@@ -17,6 +18,7 @@ const clearThreadDetailActionCreator = () => ({
 });
 
 const asyncReceiveThreadDetail = (threadId) => async (dispatch) => {
+  dispatch(showLoading());
   dispatch(clearThreadDetailActionCreator());
 
   try {
@@ -25,14 +27,18 @@ const asyncReceiveThreadDetail = (threadId) => async (dispatch) => {
   } catch (error) {
     alert(error.message);
   }
+
+  dispatch(hideLoading());
 };
 
-const asyncAddComment = (content, threadId) => async () => {
+const asyncAddComment = (content, threadId) => async (dispatch) => {
+  dispatch(showLoading());
   try {
     await api.createComment(content, threadId);
   } catch (error) {
     alert(error.message);
   }
+  dispatch(hideLoading());
 };
 
 export {

@@ -1,3 +1,4 @@
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 
 const ActionType = {
@@ -20,6 +21,7 @@ const unsetAuthUserActionCreator = () => ({
 });
 
 const asyncSetAuthUser = ({ email, password }) => async (dispatch) => {
+  dispatch(showLoading());
   try {
     const token = await api.login({ email, password });
     api.putAccessToken(token);
@@ -28,11 +30,14 @@ const asyncSetAuthUser = ({ email, password }) => async (dispatch) => {
   } catch (error) {
     alert(error.message);
   }
+  dispatch(hideLoading());
 };
 
 const asyncUnsetAuthUser = () => (dispatch) => {
+  dispatch(showLoading());
   dispatch(unsetAuthUserActionCreator());
   api.putAccessToken('');
+  dispatch(hideLoading());
 };
 
 export {

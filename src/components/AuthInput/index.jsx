@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function AuthInput({
   label, type, name, placeholder, value, onHandleChange,
@@ -30,5 +31,14 @@ function AuthInput({
     </>
   );
 }
+
+AuthInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onHandleChange: PropTypes.func.isRequired,
+};
 
 export default AuthInput;

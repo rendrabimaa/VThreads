@@ -20,12 +20,12 @@ function LoginPage() {
     const loadUser = async () => {
       await dispatch(asyncPreloadProcess());
       if (authUser) {
-      navigate('/');
+        navigate('/');
       }
-    }
+    };
 
     loadUser();
-  }, [authUser, dispatch, navigate])
+  }, [authUser, dispatch, navigate]);
 
   const handleLogin = async () => {
     await dispatch(asyncSetAuthUser({ email, password }));
@@ -34,13 +34,18 @@ function LoginPage() {
 
   return (
     <AuthLayout>
-      <h4 className='font-bold text-xl mb-4'>
+      <h4 className="font-bold text-xl mb-4">
         Login
       </h4>
       <AuthInput label="Email" type="email" name="email" value={email} onHandleChange={onEmailChange} placeholder="Input your Email here ..." />
       <AuthInput label="Password" type="password" name="password" value={password} onHandleChange={onPasswordChange} placeholder="Input your Password here ..." />
       <AuthButton handleClick={handleLogin}>Login Now</AuthButton>
-      <p className='text-sm'>Don't have Account ? <Link to='/auth/register' className='text-blue-900 underline'>Register</Link> Here</p>
+      <p className="text-sm">
+        Don&apos;t have Account ?
+        <Link to="/auth/register" className="text-blue-900 underline">Register</Link>
+        {' '}
+        Here
+      </p>
     </AuthLayout>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import useInput from '../../hooks/useInput';
 import { asyncAddThread } from '../../store/threads/action';
@@ -40,7 +41,7 @@ function ModalAddData({
       <div className="bg-white p-8 rounded-lg w-96">
         <div className="flex justify-between">
           <h2 className="text-xl font-bold mb-4">Post Something</h2>
-          <button className="bg-red-500 p-2" onClick={closeModal}>X</button>
+          <button type="button" className="bg-red-500 p-2" onClick={closeModal}>X</button>
         </div>
         {!addComment
           && (
@@ -63,6 +64,7 @@ function ModalAddData({
           rows="10"
         />
         <button
+          type="button"
           onClick={addComment ? handleAddComment : handleAddThread}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
@@ -72,5 +74,16 @@ function ModalAddData({
     </Modal>
   );
 }
+
+ModalAddData.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  threadId: PropTypes.string.isRequired,
+  addComment: PropTypes.bool,
+};
+
+ModalAddData.defaultProps = {
+  addComment: null,
+};
 
 export default ModalAddData;

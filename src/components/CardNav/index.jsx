@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import postedAt from '../../utils/calculatePostedAt';
 
 function CardNav({ avatar, owner, createdAt }) {
@@ -16,5 +17,11 @@ function CardNav({ avatar, owner, createdAt }) {
     </div>
   );
 }
+
+CardNav.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  owner: PropTypes.string.isRequired,
+  createdAt: PropTypes.instanceOf(Date).isRequired,
+};
 
 export default CardNav;

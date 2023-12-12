@@ -9,6 +9,17 @@
         "sourceType": "module"
     },
     "rules": {
-      "linebreak-style": 0
+      "linebreak-style": 0,
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never"
+        }
+      ],
+      "react/jsx-props-no-spreading": "off",
+      "max-len": ["error", { "code": 1000 }],
+      "no-alert": "off"
     }
 }

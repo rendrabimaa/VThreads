@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import CardNav from '../CardNav';
 
@@ -11,8 +12,14 @@ function ThreadItem({
     navigate(`/thread/${id}`);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      clickThreadHandle();
+    }
+  };
+
   return (
-    <div onClick={clickThreadHandle} className="my-2 border-2 border-gray-400 py-4 px-2 cursor-pointer">
+    <div onClick={clickThreadHandle} onKeyDown={handleKeyPress} role="button" tabIndex={0} className="my-2 border-2 border-gray-400 py-4 px-2 cursor-pointer">
       <CardNav avatar={user.avatar} owner={user.name} createdAt={createdAt} />
       <p className="text-lg mt-2 mb-4 font-semibold text-gray-700">
         {title}
@@ -24,5 +31,17 @@ function ThreadItem({
     </div>
   );
 }
+
+ThreadItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  totalComments: PropTypes.number.isRequired,
+  createdAt: PropTypes.instanceOf(Date).isRequired,
+  user: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+
+};
 
 export default ThreadItem;
