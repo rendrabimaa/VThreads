@@ -1,14 +1,17 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import {
+  describe, expect, it, vi,
+} from 'vitest';
 import AuthInput from '.';
-import { describe, expect, it, vi } from 'vitest';
 
 describe('AuthInput component', () => {
-    const mockLabelEmail = 'Email';
-    const mockTypeEmail = 'email';
-    const mockNameEmail = 'email';
-    const mockPlaceholderEmail = 'Enter email';
-    const mockValueEmail = '';
-    const mockOnChangeEmail = vi.fn();
+  const mockLabelEmail = 'Email';
+  const mockTypeEmail = 'email';
+  const mockNameEmail = 'email';
+  const mockPlaceholderEmail = 'Enter email';
+  const mockValueEmail = '';
+  const mockOnChangeEmail = vi.fn();
 
   const mockLabelName = 'Full Name';
   const mockTypeName = 'text';
@@ -20,13 +23,13 @@ describe('AuthInput component', () => {
   it('renders Name input with provided props', () => {
     render(
       <AuthInput
-      label={mockLabelEmail}
-      type={mockTypeEmail}
-      name={mockNameEmail}
-      placeholder={mockPlaceholderEmail}
-      value={mockValueEmail}
-      onHandleChange={mockOnChangeEmail}
-      />
+        label={mockLabelEmail}
+        type={mockTypeEmail}
+        name={mockNameEmail}
+        placeholder={mockPlaceholderEmail}
+        value={mockValueEmail}
+        onHandleChange={mockOnChangeEmail}
+      />,
     );
 
     const labelElement = screen.getByText(mockLabelEmail);
@@ -46,7 +49,7 @@ describe('AuthInput component', () => {
         placeholder={mockPlaceholderName}
         value={mockValueName}
         onHandleChange={mockOnChangeName}
-      />
+      />,
     );
 
     const inputElement = screen.getByPlaceholderText(mockPlaceholderName);

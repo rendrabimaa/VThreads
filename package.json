@@ -9,7 +9,8 @@
     "lint": "eslint ./src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint ./src --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "e2e": "cypress run"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
@@ -31,8 +32,10 @@
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
+    "cypress": "^13.6.1",
     "eslint": "^8.55.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",

@@ -1,8 +1,14 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "cypress/globals": true
     },
+    "plugins": [
+      "react",
+      "react-hooks",
+      "cypress"
+    ],
     "extends": "airbnb",
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -20,6 +26,7 @@
       ],
       "react/jsx-props-no-spreading": "off",
       "max-len": ["error", { "code": 1000 }],
-      "no-alert": "off"
+      "no-alert": "off",
+      "no-underscore-dangle": "off"
     }
 }

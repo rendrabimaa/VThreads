@@ -1,6 +1,9 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import {
+  describe, it, expect, vi,
+} from 'vitest';
 import AuthButton from '.';
-import { describe, it, expect, vi } from 'vitest';
 
 describe('AuthButton component', () => {
   it('renders button with children and triggers onClick event', () => {
@@ -10,7 +13,7 @@ describe('AuthButton component', () => {
     render(
       <AuthButton handleClick={mockHandleClick}>
         {mockChildText}
-      </AuthButton>
+      </AuthButton>,
     );
 
     const buttonElement = screen.getByText(mockChildText);
@@ -19,6 +22,6 @@ describe('AuthButton component', () => {
 
     fireEvent.click(buttonElement);
 
-    expect(mockHandleClick).toHaveBeenCalledTimes(1); 
+    expect(mockHandleClick).toHaveBeenCalledTimes(1);
   });
 });

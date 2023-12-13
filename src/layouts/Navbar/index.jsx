@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <>
       <Loading />
-      <div className="fixed w-full sm:w-11/12 max-w-3xl mx-auto bg-white pb-2 border-b-4 border-gray-500">
+      <nav className="fixed w-full sm:w-11/12 max-w-3xl mx-auto bg-white pb-2 border-b-4 border-gray-500">
         <div className="flex w-full justify-between bg-gray-300 py-4 px-4">
           <h3 className="flex gap-2 items-center text-xl font-bold text-gray-800">
             <TbNeedleThread />
@@ -30,7 +30,7 @@ function Navbar() {
           </button>
         </div>
         <ButtonAddThread authUser={authUser} />
-      </div>
+      </nav>
     </>
   );
 }
