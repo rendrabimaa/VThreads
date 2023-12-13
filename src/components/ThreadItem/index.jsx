@@ -36,7 +36,7 @@ ThreadItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   totalComments: PropTypes.number.isRequired,
-  createdAt: PropTypes.instanceOf(Date).isRequired,
+  createdAt: PropTypes.string.isRequired,
   user: PropTypes.shape({
     avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

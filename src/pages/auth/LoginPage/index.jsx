@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../i18n';
 import useInput from '../../../hooks/useInput';
 import { asyncSetAuthUser } from '../../../store/authUser/actions';
 import AuthInput from '../../../components/AuthInput';
 import AuthButton from '../../../components/AuthButton';
 import AuthLayout from '../../../layouts/AuthLayout';
 import { asyncPreloadProcess } from '../../../store/isPreload/action';
+import { toggleLanguage } from '../../../store/language/action';
 
 function LoginPage() {
+  const { t } = useTranslation();
   const authUser = useSelector((states) => states.authUser);
+  const language = useSelector((state) => state.translation.language);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -32,19 +37,31 @@ function LoginPage() {
     navigate('/');
   };
 
+  const toggleLg = async () => {
+    await dispatch(toggleLanguage());
+    i18n.changeLanguage(language);
+  };
+
   return (
     <AuthLayout>
-      <h4 className="font-bold text-xl mb-4">
-        Login
-      </h4>
-      <AuthInput label="Email" type="email" name="email" value={email} onHandleChange={onEmailChange} placeholder="Input your Email here ..." />
-      <AuthInput label="Password" type="password" name="password" value={password} onHandleChange={onPasswordChange} placeholder="Input your Password here ..." />
-      <AuthButton handleClick={handleLogin}>Login Now</AuthButton>
+      <div className="flex justify-between items-center">
+        <h4 className="font-bold text-xl mb-4">
+          {t('titleLoginPage')}
+        </h4>
+        <button type="button" onClick={toggleLg} className="bg-slate-600 py-2 px-4 rounded-lg text-white font-semibold">{language}</button>
+      </div>
+      <AuthInput label={`${t('labelEmail')}`} type="email" name="email" value={email} onHandleChange={onEmailChange} placeholder={`${t('placeholderEmailInput')}`} />
+      <AuthInput label={`${t('labelPassword')}`} type="password" name="password" value={password} onHandleChange={onPasswordChange} placeholder={`${t('placeholderPasswordInput')}`} />
+      <AuthButton handleClick={handleLogin}>{t('buttonLogin')}</AuthButton>
       <p className="text-sm">
-        Don&apos;t have Account ?
-        <Link to="/auth/register" className="text-blue-900 underline">Register</Link>
+        {t('dontHaveAccount')}
         {' '}
-        Here
+        <Link to="/auth/register" className="text-blue-900 underline">
+          {' '}
+          {t('titleRegisterPage')}
+        </Link>
+        {' '}
+        {t('hereText')}
       </p>
     </AuthLayout>
   );

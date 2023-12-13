@@ -55,22 +55,22 @@ describe('Register spec', () => {
         cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail');
         cy.get('input[placeholder="Input your Name here ..."]').type('name');
         cy.get('input[placeholder="Input your Password here ..."]').type('wrong_password');
-      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
+        cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
-      cy.on('window:alert', (str) => {
-        expect(str).to.equal('"email" must be a valid email');
-      });
+        cy.on('window:alert', (str) => {
+          expect(str).to.equal('"email" must be a valid email');
+        });
     });
 
     it('should display alert when password less than 6 characters long', () => {
-        cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail');
+        cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail.com');
         cy.get('input[placeholder="Input your Name here ..."]').type('name');
         cy.get('input[placeholder="Input your Password here ..."]').type('wrong');
-      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
+        cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
-      cy.on('window:alert', (str) => {
-        expect(str).to.equal('password must be at least 6 characters long');
-      });
+        cy.on('window:alert', (str) => {
+          expect(str).to.equal('password must be at least 6 characters long');
+        });
     });
 
      it('should display login page when email and password are correct', () => {

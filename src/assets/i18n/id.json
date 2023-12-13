@@ -1,0 +1,23 @@
+{
+    "titleLoginPage": "Masuk",
+    "titleRegisterPage": "Daftar",
+    "labelEmail": "Email",
+    "labelName": "Name",
+    "labelPassword": "Password",
+    "placeholderEmailInput": "Masukan Email anda disini ...",
+    "placeholderNameInput": "Masukan Nama anda disini ...",
+    "placeholderPasswordInput": "Masukan Password anda disini ...",
+    "buttonLogin": "Masuk Sekarang",
+    "buttonRegister": "Daftar Sekarang",
+    "haveAnAccount": "Sudah punya akun?",
+    "dontHaveAccount": "Belum punya akun?",
+    "hereText": "disini",
+    "placeholderAddData":"Klik disini untuk post sesuatu",
+    "backButton": "Kembali",
+    "comments": "Komentar",
+    "addComment": "Tambah Komentar",
+    "notFoundText": "Tidak Ditemukan",
+    "titleModalAddData": "Post Sesuatu",
+    "placeholderTitleInput": "Tulis judul yang ingin anda post",
+    "placeholderBodyInput": "Tulis sesuatu untuk di post"
+}

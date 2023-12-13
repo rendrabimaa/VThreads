@@ -1,0 +1,15 @@
+{
+    "titleLoginPage": "Masuk",
+    "titleRegisterPage": "Daftar",
+    "labelEmail": "Email",
+    "labelName": "Name",
+    "labelPassword": "Password",
+    "placeholderEmailInput": "Masukan Email anda disini ...",
+    "placeholderNameInput": "Masukan Nama anda disini ...",
+    "placeholderPasswordInput": "Masukan Password anda disini ...",
+    "buttonLogin": "Masuk Sekarang",
+    "buttonRegister": "Daftar Sekarang",
+    "haveAnAccount": "Sudah punya akun?",
+    "dontHaveAccount": "Belum punya akun?",
+    "hereText": "disini"
+}

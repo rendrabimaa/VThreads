@@ -1,0 +1,23 @@
+{
+    "titleLoginPage": "Login",
+    "titleRegisterPage": "Register",
+    "labelEmail": "Email",
+    "labelName": "Name",
+    "labelPassword": "Password",
+    "placeholderEmailInput": "Input your Email here ...",
+    "placeholderNameInput": "Input your Name here ...",
+    "placeholderPasswordInput": "Input your Password here ...",
+    "buttonLogin": "Login Now",
+    "buttonRegister": "Register Now",
+    "haveAnAccount": "Have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "hereText": "Here",
+    "placeholderAddData":"Click here to Post Something",
+    "backButton": "Back",
+    "comments": "Comments",
+    "addComment": "Add Comment",
+    "notFoundText": "Not Found",
+    "titleModalAddData": "Post Something",
+    "placeholderTitleInput": "Write title that you want to post",
+    "placeholderBodyInput": "Write something that you want to post"
+}

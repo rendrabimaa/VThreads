@@ -20,7 +20,7 @@ CommentItem.propTypes = {
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     }).isRequired,
-    createdAt: PropTypes.instanceOf(Date).isRequired,
+    createdAt: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
   }).isRequired,
 };

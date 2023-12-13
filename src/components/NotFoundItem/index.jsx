@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ImCross } from 'react-icons/im';
+import { useTranslation } from 'react-i18next';
 
 function NotFoundItem({ children }) {
+  const { t } = useTranslation();
+
   return (
     <p className="flex gap-2 text-red-500 items-center text-2xl font-bold justify-center w-full">
       <ImCross />
       {children}
       {' '}
-      Not Found
+      {t('notFoundText')}
     </p>
   );
 }

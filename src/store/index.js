@@ -4,6 +4,7 @@ import authUsersReducer from './authUser/reducers';
 import threadsReducer from './threads/reducer';
 import usersReducer from './users/reducer';
 import threadDetailReducer from './threadDetail/reducer';
+import translationReducer from './language/reducer';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     users: usersReducer,
     threadDetail: threadDetailReducer,
     loadingBar: loadingBarReducer,
+    translation: translationReducer,
   },
 });
 

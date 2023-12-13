@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import useInput from '../../hooks/useInput';
 import { asyncAddThread } from '../../store/threads/action';
 import { asyncPopulateThreads } from '../../store/shared/action';
@@ -13,6 +14,7 @@ function ModalAddData({
   const [title, titleChange, setTitle] = useInput();
   const [body, bodyChange, setBody] = useInput();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleAddThread = async () => {
     await dispatch(asyncAddThread({ title, body }));
@@ -40,7 +42,7 @@ function ModalAddData({
     >
       <div className="bg-white p-8 rounded-lg w-96">
         <div className="flex justify-between">
-          <h2 className="text-xl font-bold mb-4">Post Something</h2>
+          <h2 className="text-xl font-bold mb-4">{t('titleModalAddData')}</h2>
           <button type="button" className="bg-red-500 p-2" onClick={closeModal}>X</button>
         </div>
         {!addComment
@@ -50,7 +52,7 @@ function ModalAddData({
             name="name"
             value={title}
             onChange={titleChange}
-            placeholder="Write title that you want to post"
+            placeholder={t('placeholderTitleInput')}
             className="border border-gray-300 rounded px-3 py-2 mb-3 w-full"
           />
           )}
@@ -58,7 +60,7 @@ function ModalAddData({
           name="body"
           value={body}
           onChange={bodyChange}
-          placeholder="Write something that you want to post"
+          placeholder={t('placeholderBodyInput')}
           className="border border-gray-300 rounded px-3 py-2 mb-3 w-full"
           cols="30"
           rows="10"
@@ -78,12 +80,13 @@ function ModalAddData({
 ModalAddData.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
-  threadId: PropTypes.string.isRequired,
+  threadId: PropTypes.string,
   addComment: PropTypes.bool,
 };
 
 ModalAddData.defaultProps = {
   addComment: null,
+  threadId: null,
 };
 
 export default ModalAddData;

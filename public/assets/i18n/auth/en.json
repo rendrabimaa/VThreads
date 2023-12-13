@@ -1,0 +1,15 @@
+{
+    "titleLoginPage": "Login",
+    "titleRegisterPage": "Register",
+    "labelEmail": "Email",
+    "labelName": "Name",
+    "labelPassword": "Password",
+    "placeholderEmailInput": "Input your Email here ...",
+    "placeholderNameInput": "Input your Name here ...",
+    "placeholderPasswordInput": "Input your Password here ...",
+    "buttonLogin": "Login Now",
+    "buttonRegister": "Register Now",
+    "haveAnAccount": "Have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "hereText": "Here"
+}

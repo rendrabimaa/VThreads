@@ -21,7 +21,7 @@ function CardNav({ avatar, owner, createdAt }) {
 CardNav.propTypes = {
   avatar: PropTypes.string.isRequired,
   owner: PropTypes.string.isRequired,
-  createdAt: PropTypes.instanceOf(Date).isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 export default CardNav;
