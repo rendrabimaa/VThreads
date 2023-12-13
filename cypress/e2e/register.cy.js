@@ -24,7 +24,7 @@ describe('Register spec', () => {
     it('should display alert when name is empty', () => {
         cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail.com');
         cy.get('input[placeholder="Input your Password here ..."]').type('wrong_password');
-      cy.get('button', { timeout: 10000 }).should('be.visible').contains(/^Register Now$/).click();
+      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
       cy.on('window:alert', (str) => {
         expect(str).to.equal('"name" is not allowed to be empty');
@@ -34,7 +34,7 @@ describe('Register spec', () => {
     it('should display alert when email is empty', () => {
         cy.get('input[placeholder="Input your Name here ..."]').type('name');
         cy.get('input[placeholder="Input your Password here ..."]').type('wrong_password');
-      cy.get('button', { timeout: 10000 }).should('be.visible').contains(/^Register Now$/).click();
+      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
       cy.on('window:alert', (str) => {
         expect(str).to.equal('"email" is not allowed to be empty');
@@ -44,7 +44,7 @@ describe('Register spec', () => {
     it('should display alert when password is empty', () => {
         cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail.com');
         cy.get('input[placeholder="Input your Name here ..."]').type('name');
-      cy.get('button', { timeout: 10000 }).should('be.visible').contains(/^Register Now$/).click();
+      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
       cy.on('window:alert', (str) => {
         expect(str).to.equal('"password" is not allowed to be empty');
@@ -55,7 +55,7 @@ describe('Register spec', () => {
         cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail');
         cy.get('input[placeholder="Input your Name here ..."]').type('name');
         cy.get('input[placeholder="Input your Password here ..."]').type('wrong_password');
-      cy.get('button', { timeout: 10000 }).should('be.visible').contains(/^Register Now$/).click();
+      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
       cy.on('window:alert', (str) => {
         expect(str).to.equal('"email" must be a valid email');
@@ -66,7 +66,7 @@ describe('Register spec', () => {
         cy.get('input[placeholder="Input your Email here ..."]').type('test@gmail');
         cy.get('input[placeholder="Input your Name here ..."]').type('name');
         cy.get('input[placeholder="Input your Password here ..."]').type('wrong');
-      cy.get('button', { timeout: 10000 }).should('be.visible').contains(/^Register Now$/).click();
+      cy.get('button').should('be.visible').contains(/^Register Now$/).click();
    
       cy.on('window:alert', (str) => {
         expect(str).to.equal('password must be at least 6 characters long');

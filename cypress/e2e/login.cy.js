@@ -20,7 +20,7 @@ describe('Login spec', () => {
   });
 
   it('should display alert when email is empty', () => {
-    cy.get('button', { timeout: 10000 }).should('be.visible').contains(/^Login Now$/).click();
+    cy.get('button').should('be.visible').contains(/^Login Now$/).click();
  
     cy.on('window:alert', (str) => {
       expect(str).to.equal('"email" is not allowed to be empty');
